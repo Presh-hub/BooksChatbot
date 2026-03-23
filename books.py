@@ -11,16 +11,23 @@ def load_books():
 def list_books():
     df = load_books()
 
-    # Use correct column names for your dataset
-    if "Book-Title" in df.columns and "Book-Author" in df.columns:
+    print(df.columns)  # 🔥 TEMPORARY (to debug)
+
+    result = []
+
+    # Try multiple possible column names
+    if "Book-Title" in df.columns:
         titles = df["Book-Title"]
         authors = df["Book-Author"]
 
-        result = []
-        for i in range(len(titles)):
-            result.append(f"{i+1}. {titles.iloc[i]} by {authors.iloc[i]}")
-
-        return result
+    elif "title" in df.columns:
+        titles = df["title"]
+        authors = df["authors"]
 
     else:
-        return ["Dataset loaded, but expected columns not found."]
+        return ["Column names not recognized. Check dataset."]
+
+    for i in range(len(titles)):
+        result.append(f"{i+1}. {titles.iloc[i]} by {authors.iloc[i]}")
+
+    return result
