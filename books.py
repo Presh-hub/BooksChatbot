@@ -1,7 +1,7 @@
 import pandas as pd
 
 def load_books():
-    df = pd.read_csv("data/books.csv")
+    df = pd.read_csv("data/books.csv", encoding="latin-1")
     return df
 
 def list_books():
