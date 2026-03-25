@@ -12,9 +12,9 @@ def load_books():
 
     df = df[["Book-Title", "Book-Author"]].dropna().drop_duplicates()
 
-    # 🔥 Add sequence levels manually
-    df["Level"] = ["Beginner", "Intermediate", "Advanced"] * (len(df)//3 + 1)
+    levels = ["Beginner", "Intermediate", "Advanced"]
 
+    df["Level"] = [levels[i % 3] for i in range(len(df))]
     return df.head(20)
 
 def list_books():
