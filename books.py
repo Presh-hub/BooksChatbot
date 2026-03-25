@@ -4,30 +4,37 @@ def load_books():
     df = pd.read_csv(
         "data/books.csv",
         encoding="latin-1",
-        on_bad_lines='skip'   # 🔥 THIS FIXES YOUR ERROR
+        sep=";",
+        quotechar='"',
+        on_bad_lines='skip'
     )
+
+    
+    df = df[["Book-Title", "Book-Author"]]
+
+    
+    df = df.dropna()
+
+
+    df = df.drop_duplicates()
+
+
+    df["Book-Title"] = df["Book-Title"].str.strip()
+    df["Book-Author"] = df["Book-Author"].str.strip()
+
+
+    df = df.reset_index(drop=True)
+
     return df.head(10)
 
 def list_books():
     df = load_books()
 
-    print(df.columns)  # 🔥 TEMPORARY (to debug)
-
     result = []
-
-    # Try multiple possible column names
-    if "Book-Title" in df.columns:
-        titles = df["Book-Title"]
-        authors = df["Book-Author"]
-
-    elif "title" in df.columns:
-        titles = df["title"]
-        authors = df["authors"]
-
-    else:
-        return ["Column names not recognized. Check dataset."]
-
-    for i in range(len(titles)):
-        result.append(f"{i+1}. {titles.iloc[i]} by {authors.iloc[i]}")
+    for i in range(len(df)):
+        result.append(f"{i+1}. {df.iloc[i]['Book-Title']} by {df.iloc[i]['Book-Author']}")
 
     return result
+
+    
+    
