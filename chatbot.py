@@ -1,16 +1,29 @@
 from books import list_books
 
+from books import list_books, load_books
+
 def chatbot_response(user_input):
     user_input = user_input.lower()
 
     if "hello" in user_input:
-        return "Hello! I can list books from the dataset."
+        return "Hi 👋 I can recommend books by level: beginner, intermediate, advanced."
 
-    elif "book" in user_input or "list" in user_input or "sequence" in user_input:
-        return "\n".join(list_books())
+    elif "beginner" in user_input:
+        df = load_books()
+        beginner = df.head(5)
+        return "Start with these:\n" + "\n".join(beginner["Book-Title"])
+
+    elif "intermediate" in user_input:
+        return "Next step: Data Structures and Algorithms books."
+
+    elif "advanced" in user_input:
+        return "Advanced topics: Machine Learning and AI."
+
+    elif "book" in user_input:
+        return "Here are some books:\n" + "\n".join(list_books())
 
     elif "bye" in user_input:
-        return "Goodbye!"
+        return "Goodbye 👋"
 
     else:
-        return "I do not understand. Try asking: show me books"
+        return "Try: beginner books, intermediate, advanced"

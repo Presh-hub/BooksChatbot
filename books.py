@@ -6,26 +6,16 @@ def load_books():
         encoding="latin-1",
         sep=";",
         quotechar='"',
-        on_bad_lines='skip'
+        on_bad_lines='skip',
+        low_memory=False
     )
 
-    
-    df = df[["Book-Title", "Book-Author"]]
+    df = df[["Book-Title", "Book-Author"]].dropna().drop_duplicates()
 
-    
-    df = df.dropna()
+    # 🔥 Add sequence levels manually
+    df["Level"] = ["Beginner", "Intermediate", "Advanced"] * (len(df)//3 + 1)
 
-
-    df = df.drop_duplicates()
-
-
-    df["Book-Title"] = df["Book-Title"].str.strip()
-    df["Book-Author"] = df["Book-Author"].str.strip()
-
-
-    df = df.reset_index(drop=True)
-
-    return df.head(10)
+    return df.head(20)
 
 def list_books():
     df = load_books()
