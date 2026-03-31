@@ -8,7 +8,6 @@ MODE = "manual"   # change to "kaggle" if needed
 
 # LOAD DATA
 
-
 def load_books():
     if MODE == "kaggle":
         df = pd.read_csv(
@@ -35,10 +34,8 @@ def load_books():
 
 # LIST BOOKS
 
-
 def list_books():
     data = load_books()
-
     result = []
 
     if MODE == "kaggle":
@@ -53,11 +50,11 @@ def list_books():
 
 
 
-# GET SUMMARY (ONLY JSON)
+# GET SUMMARY
 
 def get_book_summary(user_input):
     if MODE == "kaggle":
-        return "❌ sorry no available summaries."
+        return "❌ no avalaible summaries."
 
     books = load_books()
 
@@ -66,3 +63,29 @@ def get_book_summary(user_input):
             return f"{b['title']}:\n{b['summary']}"
 
     return "Book not found."
+
+
+
+# SEARCH BOOK
+
+def search_book(keyword):
+    data = load_books()
+    results = []
+
+    if MODE == "kaggle":
+        for i in range(len(data)):
+            title = data.iloc[i]["Book-Title"]
+            author = data.iloc[i]["Book-Author"]
+
+            if keyword.lower() in title.lower():
+                results.append(f"{title} by {author}")
+
+    else:
+        for b in data:
+            if keyword.lower() in b["title"].lower():
+                results.append(f"{b['title']} by {b['author']}")
+
+    if results:
+        return "\n".join(results[:5])
+    else:
+        return "No matching books found."
