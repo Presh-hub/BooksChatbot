@@ -5,9 +5,7 @@ import json
 MODE = "manual"   # change to "kaggle" if needed
 
 
-
 # LOAD DATA
-
 def load_books():
     if MODE == "kaggle":
         df = pd.read_csv(
@@ -31,9 +29,7 @@ def load_books():
             return json.load(file)
 
 
-
 # LIST BOOKS
-
 def list_books():
     data = load_books()
     result = []
@@ -41,7 +37,6 @@ def list_books():
     if MODE == "kaggle":
         for i in range(len(data)):
             result.append(f"{i+1}. {data.iloc[i]['Book-Title']} by {data.iloc[i]['Book-Author']}")
-
     else:
         for b in data:
             result.append(f"{b['id']}. {b['title']} by {b['author']}")
@@ -49,12 +44,33 @@ def list_books():
     return result
 
 
+# 🔥 NEW FUNCTION (THIS FIXES YOUR ERROR)
+def list_books_by_level(level):
+    data = load_books()
+    results = []
+
+    if MODE == "kaggle":
+        # Simulate levels
+        for i in range(len(data)):
+            if i % 3 == 0 and level == "Beginner":
+                results.append(data.iloc[i]["Book-Title"])
+            elif i % 3 == 1 and level == "Intermediate":
+                results.append(data.iloc[i]["Book-Title"])
+            elif i % 3 == 2 and level == "Advanced":
+                results.append(data.iloc[i]["Book-Title"])
+
+    else:
+        for b in data:
+            if b["level"].lower() == level.lower():
+                results.append(b["title"])
+
+    return results[:5]
+
 
 # GET SUMMARY
-
 def get_book_summary(user_input):
     if MODE == "kaggle":
-        return "❌ no avalaible summaries."
+        return "❌ No available summaries for Kaggle dataset."
 
     books = load_books()
 
@@ -65,9 +81,7 @@ def get_book_summary(user_input):
     return "Book not found."
 
 
-
 # SEARCH BOOK
-
 def search_book(keyword):
     data = load_books()
     results = []
