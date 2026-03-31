@@ -35,7 +35,7 @@ def chatbot_response(user_input):
         results = search_book(keyword)
 
         if results:
-            return "🔍 Found:\n" + "\n".join(results)
+            return "🔍 Found:\n" + results
         else:
             return "❌ No matching books found."
 

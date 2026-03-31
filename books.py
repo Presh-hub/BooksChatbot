@@ -78,7 +78,7 @@ def get_book_summary(user_input):
         if b["title"].lower() in user_input.lower():
             return f"{b['title']}:\n{b['summary']}"
 
-    return "Book not found."
+    return "Summary not available at the moment"
 
 
 # SEARCH BOOK
