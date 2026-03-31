@@ -1,44 +1,81 @@
 [
-  {"id": 1, "title": "Introduction to Programming", "author": "John Zelle", "level": "Beginner"},
-  {"id": 2, "title": "Python Crash Course", "author": "Eric Matthes", "level": "Beginner"},
-  {"id": 3, "title": "Automate the Boring Stuff with Python", "author": "Al Sweigart", "level": "Beginner"},
-  {"id": 4, "title": "Think Python", "author": "Allen B. Downey", "level": "Beginner"},
-  {"id": 5, "title": "Learn Python the Hard Way", "author": "Zed Shaw", "level": "Beginner"},
-  {"id": 6, "title": "Head First Python", "author": "Paul Barry", "level": "Beginner"},
-  {"id": 7, "title": "Programming for Beginners", "author": "Mark Lassoff", "level": "Beginner"},
-  {"id": 8, "title": "Python Basics", "author": "Dan Bader", "level": "Beginner"},
-  {"id": 9, "title": "Beginning Programming with Python", "author": "Richard Bradley", "level": "Beginner"},
-  {"id": 10, "title": "Coding for Absolute Beginners", "author": "Michael Dawson", "level": "Beginner"},
+  {"id":1,"title":"Introduction to Programming","author":"John Zelle","level":"Beginner","summary":"This book introduces fundamental programming concepts using Python. It focuses on problem-solving, logic building, and understanding how programs work. Topics such as variables, loops, conditionals, and functions are explained with simple examples. It is designed for complete beginners and helps readers develop confidence in writing basic programs."},
 
-  {"id": 11, "title": "Data Structures and Algorithms in Python", "author": "Michael Goodrich", "level": "Intermediate"},
-  {"id": 12, "title": "Grokking Algorithms", "author": "Aditya Bhargava", "level": "Intermediate"},
-  {"id": 13, "title": "Clean Code", "author": "Robert C. Martin", "level": "Intermediate"},
-  {"id": 14, "title": "The Pragmatic Programmer", "author": "Andrew Hunt", "level": "Intermediate"},
-  {"id": 15, "title": "Effective Python", "author": "Brett Slatkin", "level": "Intermediate"},
-  {"id": 16, "title": "Python Cookbook", "author": "David Beazley", "level": "Intermediate"},
-  {"id": 17, "title": "Fluent Python", "author": "Luciano Ramalho", "level": "Intermediate"},
-  {"id": 18, "title": "Design Patterns", "author": "Erich Gamma", "level": "Intermediate"},
-  {"id": 19, "title": "Refactoring", "author": "Martin Fowler", "level": "Intermediate"},
-  {"id": 20, "title": "Introduction to Algorithms", "author": "Thomas H. Cormen", "level": "Intermediate"},
-  {"id": 21, "title": "Algorithms Unlocked", "author": "Thomas H. Cormen", "level": "Intermediate"},
-  {"id": 22, "title": "Structure and Interpretation of Computer Programs", "author": "Harold Abelson", "level": "Intermediate"},
-  {"id": 23, "title": "Computer Science Distilled", "author": "Wladston Ferreira Filho", "level": "Intermediate"},
-  {"id": 24, "title": "The Art of Computer Programming", "author": "Donald Knuth", "level": "Intermediate"},
-  {"id": 25, "title": "Programming Pearls", "author": "Jon Bentley", "level": "Intermediate"},
+  {"id":2,"title":"Python Crash Course","author":"Eric Matthes","level":"Beginner","summary":"Python Crash Course is a practical introduction to Python programming. It teaches core concepts like variables, loops, and functions, then guides readers into building real projects such as games and web apps. It emphasizes learning by doing, making it ideal for beginners who want hands-on experience."},
 
-  {"id": 26, "title": "Hands-On Machine Learning with Scikit-Learn", "author": "Aurélien Géron", "level": "Advanced"},
-  {"id": 27, "title": "Deep Learning", "author": "Ian Goodfellow", "level": "Advanced"},
-  {"id": 28, "title": "Artificial Intelligence: A Modern Approach", "author": "Stuart Russell", "level": "Advanced"},
-  {"id": 29, "title": "Pattern Recognition and Machine Learning", "author": "Christopher Bishop", "level": "Advanced"},
-  {"id": 30, "title": "Machine Learning Yearning", "author": "Andrew Ng", "level": "Advanced"},
-  {"id": 31, "title": "Reinforcement Learning: An Introduction", "author": "Richard Sutton", "level": "Advanced"},
-  {"id": 32, "title": "Computer Vision: Algorithms and Applications", "author": "Richard Szeliski", "level": "Advanced"},
-  {"id": 33, "title": "Speech and Language Processing", "author": "Daniel Jurafsky", "level": "Advanced"},
-  {"id": 34, "title": "Natural Language Processing with Python", "author": "Steven Bird", "level": "Advanced"},
-  {"id": 35, "title": "Probabilistic Graphical Models", "author": "Daphne Koller", "level": "Advanced"},
-  {"id": 36, "title": "Deep Reinforcement Learning Hands-On", "author": "Maxim Lapan", "level": "Advanced"},
-  {"id": 37, "title": "AI Superpowers", "author": "Kai-Fu Lee", "level": "Advanced"},
-  {"id": 38, "title": "Life 3.0", "author": "Max Tegmark", "level": "Advanced"},
-  {"id": 39, "title": "Human Compatible", "author": "Stuart Russell", "level": "Advanced"},
-  {"id": 40, "title": "The Hundred-Page Machine Learning Book", "author": "Andriy Burkov", "level": "Advanced"}
+  {"id":3,"title":"Automate the Boring Stuff with Python","author":"Al Sweigart","level":"Beginner","summary":"This book shows how to use Python to automate everyday tasks such as handling files, scraping websites, and working with spreadsheets. It is practical and beginner-friendly, demonstrating how coding can solve real-life problems efficiently."},
+
+  {"id":4,"title":"Think Python","author":"Allen Downey","level":"Beginner","summary":"Think Python teaches programming by focusing on understanding concepts deeply. It introduces problem-solving techniques and debugging skills while explaining programming logic clearly. It is great for learners who want a strong conceptual foundation."},
+
+  {"id":5,"title":"Learn Python the Hard Way","author":"Zed Shaw","level":"Beginner","summary":"This book takes a step-by-step approach to learning Python through exercises. It emphasizes practice and repetition, helping beginners build discipline and confidence in coding through hands-on learning."},
+
+  {"id":6,"title":"Head First Python","author":"Paul Barry","level":"Beginner","summary":"Head First Python uses a visually engaging style to teach programming concepts. It combines explanations with diagrams and examples, making learning interactive and easier to understand for beginners."},
+
+  {"id":7,"title":"Programming for Beginners","author":"Mark Lassoff","level":"Beginner","summary":"This book introduces programming basics such as syntax, logic, and simple problem-solving. It is designed for absolute beginners and provides a gentle introduction to coding concepts."},
+
+  {"id":8,"title":"Python Basics","author":"Dan Bader","level":"Beginner","summary":"Python Basics provides a clear introduction to Python programming. It covers core concepts and includes exercises that help learners practice and reinforce their understanding."},
+
+  {"id":9,"title":"Beginning Programming with Python","author":"Richard Bradley","level":"Beginner","summary":"This book introduces programming using Python with a focus on building strong fundamentals. It explains key concepts with practical examples and exercises for beginners."},
+
+  {"id":10,"title":"Coding for Absolute Beginners","author":"Michael Dawson","level":"Beginner","summary":"This book teaches basic coding concepts in a simple and engaging way. It is suitable for beginners with no prior experience and focuses on building foundational skills."},
+
+  {"id":11,"title":"Data Structures and Algorithms in Python","author":"Michael Goodrich","level":"Intermediate","summary":"This book introduces data structures and algorithms using Python. It explains how to organize data efficiently and solve complex problems. It is essential for learners moving beyond basic programming."},
+
+  {"id":12,"title":"Grokking Algorithms","author":"Aditya Bhargava","level":"Intermediate","summary":"Grokking Algorithms explains algorithmic concepts using visuals and simple explanations. It covers searching, sorting, recursion, and graphs, helping learners understand how algorithms work."},
+
+  {"id":13,"title":"Clean Code","author":"Robert Martin","level":"Intermediate","summary":"Clean Code focuses on writing readable and maintainable code. It teaches best practices, coding standards, and design principles essential for professional software development."},
+
+  {"id":14,"title":"The Pragmatic Programmer","author":"Andrew Hunt","level":"Intermediate","summary":"This book provides practical advice for improving programming skills. It focuses on problem-solving, coding practices, and becoming a better developer."},
+
+  {"id":15,"title":"Effective Python","author":"Brett Slatkin","level":"Intermediate","summary":"Effective Python presents tips and best practices for writing better Python code. It helps developers improve performance and readability."},
+
+  {"id":16,"title":"Python Cookbook","author":"David Beazley","level":"Intermediate","summary":"This book provides solutions to common programming problems using Python. It is useful for developers who want practical coding techniques."},
+
+  {"id":17,"title":"Fluent Python","author":"Luciano Ramalho","level":"Intermediate","summary":"Fluent Python helps developers understand advanced Python features and write more efficient code. It focuses on writing idiomatic Python."},
+
+  {"id":18,"title":"Design Patterns","author":"Erich Gamma","level":"Intermediate","summary":"Design Patterns introduces reusable solutions to common software design problems. It is essential for understanding software architecture."},
+
+  {"id":19,"title":"Refactoring","author":"Martin Fowler","level":"Intermediate","summary":"This book explains how to improve existing code without changing its functionality. It focuses on making code cleaner and more maintainable."},
+
+  {"id":20,"title":"Introduction to Algorithms","author":"Thomas Cormen","level":"Intermediate","summary":"This book provides a comprehensive introduction to algorithms and their applications. It is widely used in computer science education."},
+
+  {"id":21,"title":"Algorithms Unlocked","author":"Thomas Cormen","level":"Intermediate","summary":"Algorithms Unlocked simplifies algorithm concepts for learners, making them easier to understand without heavy mathematics."},
+
+  {"id":22,"title":"Structure and Interpretation of Computer Programs","author":"Harold Abelson","level":"Intermediate","summary":"This book teaches programming concepts through abstraction and problem-solving, helping learners think like computer scientists."},
+
+  {"id":23,"title":"Computer Science Distilled","author":"Wladston Filho","level":"Intermediate","summary":"This book summarizes key computer science concepts in a concise and easy-to-understand way."},
+
+  {"id":24,"title":"The Art of Computer Programming","author":"Donald Knuth","level":"Intermediate","summary":"A classic book that explores algorithms and programming techniques in depth, suitable for serious learners."},
+
+  {"id":25,"title":"Programming Pearls","author":"Jon Bentley","level":"Intermediate","summary":"Programming Pearls focuses on problem-solving and writing efficient code through real-world examples."},
+
+  {"id":26,"title":"Hands-On Machine Learning","author":"Aurelien Geron","level":"Advanced","summary":"This book introduces machine learning concepts using practical examples. It covers supervised learning, neural networks, and real-world applications."},
+
+  {"id":27,"title":"Deep Learning","author":"Ian Goodfellow","level":"Advanced","summary":"Deep Learning explains neural networks and AI systems in depth. It is widely used as a reference in advanced studies."},
+
+  {"id":28,"title":"Artificial Intelligence: A Modern Approach","author":"Stuart Russell","level":"Advanced","summary":"This book covers AI concepts such as search algorithms, reasoning, and machine learning. It is a standard reference in AI education."},
+
+  {"id":29,"title":"Pattern Recognition and Machine Learning","author":"Christopher Bishop","level":"Advanced","summary":"This book explains machine learning from a mathematical perspective, focusing on probabilistic models."},
+
+  {"id":30,"title":"Machine Learning Yearning","author":"Andrew Ng","level":"Advanced","summary":"This book provides practical advice on building machine learning systems and improving performance."},
+
+  {"id":31,"title":"Reinforcement Learning","author":"Richard Sutton","level":"Advanced","summary":"This book introduces reinforcement learning concepts and how agents learn from interaction with environments."},
+
+  {"id":32,"title":"Computer Vision","author":"Richard Szeliski","level":"Advanced","summary":"This book explains techniques used in computer vision, including image processing and object recognition."},
+
+  {"id":33,"title":"Speech and Language Processing","author":"Daniel Jurafsky","level":"Advanced","summary":"This book introduces natural language processing and computational linguistics concepts."},
+
+  {"id":34,"title":"Natural Language Processing with Python","author":"Steven Bird","level":"Advanced","summary":"This book teaches how to analyze and process text using Python and NLP libraries."},
+
+  {"id":35,"title":"Probabilistic Graphical Models","author":"Daphne Koller","level":"Advanced","summary":"This book explains probabilistic models used in machine learning and AI systems."},
+
+  {"id":36,"title":"Deep Reinforcement Learning Hands-On","author":"Maxim Lapan","level":"Advanced","summary":"This book focuses on applying reinforcement learning using practical coding examples."},
+
+  {"id":37,"title":"AI Superpowers","author":"Kai-Fu Lee","level":"Advanced","summary":"This book explores the impact of artificial intelligence on society and global competition."},
+
+  {"id":38,"title":"Life 3.0","author":"Max Tegmark","level":"Advanced","summary":"Life 3.0 discusses the future of artificial intelligence and its impact on humanity."},
+
+  {"id":39,"title":"Human Compatible","author":"Stuart Russell","level":"Advanced","summary":"This book focuses on building safe and ethical AI systems aligned with human values."},
+
+  {"id":40,"title":"The Hundred-Page Machine Learning Book","author":"Andriy Burkov","level":"Advanced","summary":"This book provides a concise overview of machine learning concepts and techniques in an easy-to-understand format."}
 ]
