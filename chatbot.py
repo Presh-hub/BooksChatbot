@@ -1,61 +1,127 @@
 from books import list_books, list_books_by_level, get_book_summary, search_book
+import random
 
 started = False
-last_level = None  # 🔥 memory
+last_level = None  # memory
+
+def suggestions():
+    return (
+        "\n\n💡 You can try:\n"
+        "- 1 → See all books\n"
+        "- 2 → Beginner books\n"
+        "- 5 python → Search books\n"
+        "- 6 think python → Get summary\n"
+    )
+def fun_tip():
+    tips = [
+        "📖 Reading daily improves your thinking!",
+        "💡 Try beginner books if you're new!",
+        "🚀 Consistency is key to learning!",
+    ]
+    return "\n\n" + random.choice(tips)
 
 def chatbot_response(user_input):
     global last_level, started
 
     user_input = user_input.lower()
+
     #start screen
     if not started:
         if user_input == "continue":
             started = True
-            return "Great! you can now:\n- Type beginner, intermediate, advanced\n- search <book>\n- summary <book>"
+            return (
+                "📚 MENU:\n\n"
+                "1. List all books\n"
+                "2. Beginner books\n"
+                "3. Intermediate books\n"
+                "4. Advanced books\n"
+                "5. Search book (e.g. 5 python)\n"
+                "6. Get summary (e.g. 6 think python)\n"
+                "7. Exit\n\n"
+                "👉 Type a number (1–7)"
+                )
         else:
-            return "📚 Welcome to Books ChatBot!\nI can help you find books and summaries.\n\nType 'continue' to start"
+            return "📖 Welcome to Books ChatBot!\n\nType 'continue' to start"
 
-    if "hello" in user_input:
-        return "Hi 👋 I can recommend books, search, and give summaries!"
-
-    elif "beginner" in user_input:
+    # MENU OPTIONS
+    if user_input == "1":
+        return (
+    "📚 Here are all available books:\n\n"
+    + "\n".join(list_books())
+    + suggestions()
+    + fun_tip()
+)
+    
+    elif user_input == "2":
         last_level = "Beginner"
-        return "📘 Beginner Books:\n" + "\n".join(list_books_by_level("Beginner"))
-
-    elif "intermediate" in user_input:
+        return (
+    "📘 Great choice! Beginner books 👇\n\n"
+    + "\n".join(list_books_by_level("Beginner"))
+    + suggestions()
+    + fun_tip()
+)
+    elif user_input == "3":
         last_level = "Intermediate"
-        return "📗 Intermediate Books:\n" + "\n".join(list_books_by_level("Intermediate"))
-
-    elif "advanced" in user_input:
+        return (
+    "📗 Intermediate books for you 👇\n\n"
+    + "\n".join(list_books_by_level("Intermediate"))
+    + suggestions()
+    + fun_tip()
+)
+    elif user_input == "4":
         last_level = "Advanced"
-        return "📕 Advanced Books:\n" + "\n".join(list_books_by_level("Advanced"))
+        return (
+    "📕 Advanced books 💪\n\n"
+    + "\n".join(list_books_by_level("Advanced"))
+    + suggestions()
+    + fun_tip()
+)
+    elif user_input.startswith("5"):
+        keyword = user_input.replace("5", "").strip()
 
-    elif "next" in user_input:
-        if last_level == "Beginner":
-            return "➡️ Move to Intermediate:\n" + "\n".join(list_books_by_level("Intermediate"))
-        elif last_level == "Intermediate":
-            return "➡️ Move to Advanced:\n" + "\n".join(list_books_by_level("Advanced"))
-        else:
-            return "Start with beginner books first 📘"
+        if not keyword:
+            return "🔍 Please enter a book name (e.g. 5 python)" + suggestions()
 
-    elif user_input.startswith("summary"):
-        return get_book_summary(user_input)
-
-    elif "search" in user_input:
-        keyword = user_input.replace("search", "").strip()
         results = search_book(keyword)
 
         if results:
-            return "🔍 Found:\n" + results
+            return (
+                f"🔍 Nice! I found these books for '{keyword}':\n\n"
+                + results
+                + suggestions()
+                + fun_tip()
+            )
         else:
-            return "❌ No matching books found."
-            
-    elif "recommend" in user_input:
-        return "🔥 Recommended:\n" + "\n".join(list_books_by_level("Beginner"))
+            return "❌ No books found. Try another keyword!" + suggestions()
+    
+    elif user_input.startswith("6"):
+        return (
+            "📖 Here’s the summary:\n\n"
+            + get_book_summary(user_input)
+            + suggestions()
+            + fun_tip()
+        )
 
-    elif "bye" in user_input:
-        return "Goodbye and hope to see you next time👋"
+    elif user_input == "7":
+        return "👋 Thanks for using Books ChatBot!"
+        # SMART AUTO RESPONSES
+    elif "thanks" in user_input or "thank you" in user_input:
+        return "😊 You're welcome! I'm always here to help you find books!"
+
+    elif "help" in user_input:
+        return (
+        "🤖 I can help you explore books!\n"
+        + suggestions()
+    )
+
+    elif "hi" in user_input or "hello" in user_input:
+        return (
+        "👋 Hey there! Ready to discover some great books?\n"
+        + suggestions()
+    )
 
     else:
-        return "Try: beginner books, search <name>, next, or summary "
+        return "👋 Goodbye! Hope you found a great book 📚"
+
+
     

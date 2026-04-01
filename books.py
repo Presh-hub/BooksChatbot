@@ -38,13 +38,14 @@ def list_books():
         for i in range(len(data)):
             result.append(f"{i+1}. {data.iloc[i]['Book-Title']} by {data.iloc[i]['Book-Author']}")
     else:
-        for b in data:
-            result.append(f"{b['id']}. {b['title']} by {b['author']}")
+        for i, b in enumerate(data):
+            result.append(f"{i+1}. {b['title']} by {b['author']}")
+
 
     return result
 
 
-# 🔥 NEW FUNCTION (THIS FIXES YOUR ERROR)
+#  NEW FUNCTION (THIS FIXES YOUR ERROR)
 def list_books_by_level(level):
     data = load_books()
     results = []
