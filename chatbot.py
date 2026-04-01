@@ -1,11 +1,19 @@
 from books import list_books, list_books_by_level, get_book_summary, search_book
 
+started = False
 last_level = None  # 🔥 memory
 
 def chatbot_response(user_input):
-    global last_level
+    global last_level, started
 
     user_input = user_input.lower()
+    #start screen
+    if not started:
+        if user_input == "continue":
+            started = True
+            return "Great! you can now:\n- Type beginner, intermediate, advanced\n- search <book>\n- summary <book>"
+        else:
+            return "📚 Welcome to Books ChatBot!\nI can help you find books and summaries.\n\nType 'continue' to start"
 
     if "hello" in user_input:
         return "Hi 👋 I can recommend books, search, and give summaries!"
@@ -30,6 +38,9 @@ def chatbot_response(user_input):
         else:
             return "Start with beginner books first 📘"
 
+    elif user_input.startswith("summary"):
+        return get_book_summary(user_input)
+
     elif "search" in user_input:
         keyword = user_input.replace("search", "").strip()
         results = search_book(keyword)
@@ -38,15 +49,13 @@ def chatbot_response(user_input):
             return "🔍 Found:\n" + results
         else:
             return "❌ No matching books found."
-
-    elif "summary" in user_input:
-        return get_book_summary(user_input)
-
+            
     elif "recommend" in user_input:
         return "🔥 Recommended:\n" + "\n".join(list_books_by_level("Beginner"))
 
     elif "bye" in user_input:
-        return "Goodbye 👋"
+        return "Goodbye and hope to see you next time👋"
 
     else:
-        return "Try: beginner books, search <name>, next, or summary <book>"
+        return "Try: beginner books, search <name>, next, or summary "
+    

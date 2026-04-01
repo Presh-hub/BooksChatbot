@@ -57,12 +57,12 @@ def list_books_by_level(level):
             elif i % 3 == 1 and level == "Intermediate":
                 results.append(data.iloc[i]["Book-Title"])
             elif i % 3 == 2 and level == "Advanced":
-                results.append(data.iloc[i]["Book-Title"])
+                results.append(f"{len(results)+1}. {data.iloc[i]['Book-Title']}")
 
     else:
         for b in data:
             if b["level"].lower() == level.lower():
-                results.append(b["title"])
+                results.append(f"{len(results)+1}. {b['title']}")
 
     return results[:5]
 
@@ -75,7 +75,7 @@ def get_book_summary(user_input):
     books = load_books()
 
     for b in books:
-        if b["title"].lower() in user_input.lower():
+        if any(word in b["title"].lower() for word in user_input.lower().split()):
             return f"{b['title']}:\n{b['summary']}"
 
     return "Summary not available at the moment"
@@ -92,12 +92,12 @@ def search_book(keyword):
             author = data.iloc[i]["Book-Author"]
 
             if keyword.lower() in title.lower():
-                results.append(f"{title} by {author}")
+                results.append(f"{len(results)+1}. {title} by {author}")
 
     else:
         for b in data:
             if keyword.lower() in b["title"].lower():
-                results.append(f"{b['title']} by {b['author']}")
+                results.append(f"{len(results)+1}. {b['title']} by {b['author']}")
 
     if results:
         return "\n".join(results[:5])
