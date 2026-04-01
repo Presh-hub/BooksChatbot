@@ -86,7 +86,7 @@ def search_book(keyword):
     data = load_books()
     results = []
 
-    if MODE ==  "manual":#"kaggle":
+    if MODE ==  "kaggle":
         for i in range(len(data)):
             title = data.iloc[i]["Book-Title"]
             author = data.iloc[i]["Book-Author"]
@@ -102,4 +102,4 @@ def search_book(keyword):
     if results:
         return "\n".join(results[:5])
     else:
-        return "No matching books found."
+        return []
