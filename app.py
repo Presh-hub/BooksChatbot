@@ -34,7 +34,7 @@ def speak_text(text):
 st.set_page_config(page_title="Books ChatBot", page_icon="📚")
 
 st.title("📚 Books ChatBot")
-st.write("Discover books, search, and get summaries!")
+st.write("Book Sequencing Chatbot")
 
 # SESSION MEMORY
 if "messages" not in st.session_state:
@@ -83,7 +83,7 @@ uploaded_files = st.file_uploader(
 if uploaded_files:
     for uploaded_file in uploaded_files:
         image = Image.open(uploaded_file)
-        st.image(image, caption="Uploaded Image", use_container_width=True)
+        st.image(image, caption="Uploaded Image", width=120)
 
         # OCR
         text = pytesseract.image_to_string(image)
