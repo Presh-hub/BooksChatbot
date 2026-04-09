@@ -3,7 +3,7 @@ from gtts import gTTS
 from chatbot import chatbot_response
 from PIL import Image
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
 def clean_text_for_voice(text):
     if not text:
         return ""
